@@ -44,12 +44,57 @@ frontend                         #  前端文件夹
 ### 1. 安装**vue，python，mysql**,配置好环境
 ### 2. 从guihub克隆项目文件
 ```bash
-git clone '' 
+git clone 'https://github.com/monthwolf/vue-flask-web.git' 
 ```
 ### 3. 安装依赖
-- 安装vue3框架依赖
+以下命令在在**根目录**中运行
+- 安装vue3框架依赖  
 ```bash
 cd frontend
 npm install
+```
+- 安装python依赖
+```bash
+cd backend
+pip install -r requirements.txt
+```
+
+### 4.配置数据库
+- 创建数据库
+```bash
+mysql -u root -p xxxx                           #登录自己本地的mysql数据库
+mysql> create database vue_flask_web;           #创建数据库
+mysql> use vue_flask_web;                       #切换到数据库
+mysql> source ./backend/leFiles/user.sql;       #导入用户表
+mysql> source ./backend/leFiles/user_data.sql;  #导入用户留言表
+```
+- 连接数据库  
+进入**backend**文件夹，修改**mySQL_config.py**文件
+```bash
+# 数据库连接池
+POOL = PersistentDB(
+    creator=pymysql,    
+    maxusage=None,      # 一个链接最多被重复使用的次数，None表示无限制
+    setsession=[],      
+    ping=0,             
+    closeable=False,    
+    threadlocal=None,   
+    host='127.0.0.1',   # 数据库地址
+    port=3306,          # 数据库端口号
+    user='root',        # 用户名
+    password='123456',  # 密码
+    database='test',    # 数据库库名
+    charset='utf8'      # 编码
+)
+
+
+```
+
+### 5.运行前后端项目(请保持数据库运行！)
+```bash
+cd backend
+python run.py
+cd ../
+cd frontend
 npm run serve
 ```
