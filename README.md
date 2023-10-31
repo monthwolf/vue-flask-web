@@ -1,9 +1,9 @@
 # 本项目为前后端分离的网页项目
 ## 前端技术栈
->  Vue3+Typescript+elementPlus+Router+Axios+Pinia
+>  Vue3+Typescript+elementPlus(组件库)+Router(路由)+Axios(网络请求)+Pinia(状态管理)
 
 ## 后端技术栈
-> Python+Flask+pymysql
+> Python+Flask+pymysql(数据库操作)+flagger(API文档构建)
 
 ## 数据库
 > Mysql  
