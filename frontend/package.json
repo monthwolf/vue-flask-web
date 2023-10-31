@@ -1,0 +1,36 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@vueuse/nuxt": "^10.5.0",
+    "animate.css": "^4.1.1",
+    "animejs": "^3.2.1",
+    "axios": "^1.5.1",
+    "element-plus": "^2.4.0",
+    "jquery": "^3.7.1",
+    "pinia": "^2.1.7",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "vue3-easy-data-table": "^1.5.47"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.25",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "typescript": "~4.5.5",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2",
+    "vue-easytable": "^2.27.1"
+  }
+}

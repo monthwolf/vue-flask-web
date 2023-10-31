@@ -1,0 +1,100 @@
+:root {
+  --el-menu-hover-bg-color: #ff9463a7 !important;
+  --el-menu-hover-text-color: white !important;
+  --el-menu-active-color: white !important;
+  --el-menu-bg-color: transparent !important;
+}
+body {
+  margin: 0 0;
+}
+.logo {
+  margin-right: auto;
+  height: 90%;
+}
+li.el-menu-item {
+  &:hover {
+    & a {
+      color: white !important;
+    }
+  }
+}
+.el-menu--popup-container {
+  height: auto;
+}
+.el-popper {
+  box-shadow: 0px 0px 10px 5px #bf0000;
+  border: 0 !important;
+}
+
+.el-menu--popup {
+  padding: 0 0 !important;
+}
+
+.el-menu--popup li {
+  background: linear-gradient(-45deg, #ff0000 55%, #ff8400 75%, #ff0000 100%) !important;
+  box-shadow: -2px 0px 5px 0px #bf0000 inset;
+}
+
+.ep-bg-purple {
+  background: purple;
+}
+
+.ep-bg-purple-light {
+  background: rgb(194, 125, 194);
+}
+.el-menu-item.login {
+  border-bottom: 0 !important;
+  /* height: !important; */
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  display: flex;
+  height: 100vh;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 200% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 10% 50%;
+  }
+}
+
+.el-header {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 0;
+  padding-left: 5px;
+  background: linear-gradient(-45deg, #ff0000 6%, #ff8400 15%, #ff0000 45%, #ff8400 75%, #ff0000 100%);
+  /* //background-size: 200% 200%; */
+  opacity: 1;
+  /* //animation: gradientFlow 1s linear infinite; */
+}
+
+.el-main {
+  margin: 0 0;
+  padding: 0;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.el-main::-webkit-scrollbar {
+  display: none;
+}
+
+.el-menu {
+  background: #00000000 !important;
+  border-bottom: 0 !important;
+}

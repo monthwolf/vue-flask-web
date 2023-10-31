@@ -1,0 +1,706 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "网站API文档",
+        "description": "",
+        "version": "1.0.0"
+    },
+    "tags": [
+        {
+            "name": "web"
+        }
+    ],
+    "paths": {
+        "/user/reg": {
+            "post": {
+                "summary": "注册",
+                "x-apifox-folder": "web",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "# 注册接口\n## @param：{string}     user         用户名\n## @param：{string}     pwd          密码",
+                "tags": [
+                    "web"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "user": {
+                                        "type": "string",
+                                        "description": "用户名",
+                                        "example": "dog4"
+                                    },
+                                    "pwd": {
+                                        "type": "string",
+                                        "description": "密码",
+                                        "example": "test12345"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "user": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "user"
+                                            ],
+                                            "x-apifox-orders": [
+                                                "user"
+                                            ],
+                                            "x-apifox-ignore-properties": []
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-orders": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-ignore-properties": []
+                                },
+                                "examples": {
+                                    "1": {
+                                        "summary": "成功示例",
+                                        "value": {
+                                            "success": true,
+                                            "data": {
+                                                "user": "dog4"
+                                            },
+                                            "msg": "用户创建成功"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apifox": "https://www.apifox.cn/web/project/3455002/apis/api-118633935-run",
+                "security": []
+            }
+        },
+        "/user/login": {
+            "post": {
+                "summary": "登录",
+                "x-apifox-folder": "web",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "# 登录接口\n## @param：{string}     user         用户名\n## @param：{string}     pwd          密码",
+                "tags": [
+                    "web"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "user": {
+                                        "type": "string",
+                                        "example": "dog2"
+                                    },
+                                    "pwd": {
+                                        "type": "string",
+                                        "example": "test1234"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "user": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "user"
+                                            ],
+                                            "x-apifox-orders": [
+                                                "user"
+                                            ],
+                                            "x-apifox-ignore-properties": []
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-orders": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-ignore-properties": []
+                                },
+                                "examples": {
+                                    "1": {
+                                        "summary": "成功示例",
+                                        "value": {
+                                            "success": true,
+                                            "data": {
+                                                "user": "dog2"
+                                            },
+                                            "msg": "登录成功"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apifox": "https://www.apifox.cn/web/project/3455002/apis/api-118633961-run",
+                "security": []
+            }
+        },
+        "/api/v2/upload": {
+            "post": {
+                "summary": "上传图片",
+                "x-apifox-folder": "web",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "web"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "",
+                        "required": false,
+                        "example": "mWmwgu7hm7tkjIHgG4ZSghZbWlSW64Fg",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "smfile": {
+                                        "type": "string",
+                                        "description": "测试图片",
+                                        "example": "cmMtdXBsb2FkLTE2OTg1NDQyNDIwOTYtNA==/4.jpg",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "code": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "file_id": {
+                                                    "type": "integer"
+                                                },
+                                                "width": {
+                                                    "type": "integer"
+                                                },
+                                                "height": {
+                                                    "type": "integer"
+                                                },
+                                                "filename": {
+                                                    "type": "string"
+                                                },
+                                                "storename": {
+                                                    "type": "string"
+                                                },
+                                                "size": {
+                                                    "type": "integer"
+                                                },
+                                                "path": {
+                                                    "type": "string"
+                                                },
+                                                "hash": {
+                                                    "type": "string"
+                                                },
+                                                "url": {
+                                                    "type": "string"
+                                                },
+                                                "delete": {
+                                                    "type": "string"
+                                                },
+                                                "page": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "file_id",
+                                                "width",
+                                                "height",
+                                                "filename",
+                                                "storename",
+                                                "size",
+                                                "path",
+                                                "hash",
+                                                "url",
+                                                "delete",
+                                                "page"
+                                            ],
+                                            "x-apifox-orders": [
+                                                "file_id",
+                                                "width",
+                                                "height",
+                                                "filename",
+                                                "storename",
+                                                "size",
+                                                "path",
+                                                "hash",
+                                                "url",
+                                                "delete",
+                                                "page"
+                                            ],
+                                            "x-apifox-ignore-properties": []
+                                        },
+                                        "RequestId": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "success",
+                                        "code",
+                                        "message",
+                                        "data",
+                                        "RequestId"
+                                    ],
+                                    "x-apifox-orders": [
+                                        "success",
+                                        "code",
+                                        "message",
+                                        "data",
+                                        "RequestId"
+                                    ],
+                                    "x-apifox-ignore-properties": []
+                                },
+                                "examples": {
+                                    "1": {
+                                        "summary": "成功示例",
+                                        "value": {
+                                            "success": true,
+                                            "code": "success",
+                                            "message": "Upload success.",
+                                            "data": {
+                                                "file_id": 0,
+                                                "width": 1280,
+                                                "height": 1280,
+                                                "filename": "4.jpg",
+                                                "storename": "xGw3XIi5v7VSZuD.jpg",
+                                                "size": 104355,
+                                                "path": "/2023/10/29/xGw3XIi5v7VSZuD.jpg",
+                                                "hash": "dQcy2j4xNvMl1PT3C67bnzikEq",
+                                                "url": "https://s2.loli.net/2023/10/29/xGw3XIi5v7VSZuD.jpg",
+                                                "delete": "https://sm.ms/delete/dQcy2j4xNvMl1PT3C67bnzikEq",
+                                                "page": "https://sm.ms/image/xGw3XIi5v7VSZuD"
+                                            },
+                                            "RequestId": "8EC2FDE9-833B-48B1-9F44-20D3DDA858D7"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apifox": "https://www.apifox.cn/web/project/3455002/apis/api-119915252-run",
+                "security": []
+            }
+        },
+        "/cards/get": {
+            "get": {
+                "summary": "获取用户所有留言",
+                "x-apifox-folder": "web",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "web"
+                ],
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "undefine",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "username": {
+                                                        "type": "string"
+                                                    },
+                                                    "content": {
+                                                        "type": "string"
+                                                    },
+                                                    "img": {
+                                                        "type": "null"
+                                                    },
+                                                    "create_time": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "username",
+                                                    "content",
+                                                    "img",
+                                                    "create_time"
+                                                ],
+                                                "x-apifox-orders": [
+                                                    "username",
+                                                    "content",
+                                                    "img",
+                                                    "create_time"
+                                                ],
+                                                "x-apifox-ignore-properties": []
+                                            }
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-orders": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-ignore-properties": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apifox": "https://www.apifox.cn/web/project/3455002/apis/api-120039476-run",
+                "security": []
+            }
+        },
+        "/cards/add": {
+            "post": {
+                "summary": "添加留言",
+                "x-apifox-folder": "web",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "web"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "user": {
+                                        "type": "string",
+                                        "example": "dog1"
+                                    },
+                                    "content": {
+                                        "type": "string",
+                                        "example": "Table 组件提供了单选的支持， 只需要配置 highlight-current-row 属性即可实现单选。 之后由 current-change 事件来管理选中时触发的事件，它会传入 currentRow，oldCurrentRow。 如果需要显示索引，可以增加一列 el-table-column，设置 type 属性为 index 即可显示从 1 开始的索引号。"
+                                    },
+                                    "img": {
+                                        "type": "string",
+                                        "example": "https://cn.element-plus.org/images/element-plus-logo.svg"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {},
+                                            "x-apifox-orders": [],
+                                            "x-apifox-ignore-properties": []
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-orders": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-ignore-properties": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apifox": "https://www.apifox.cn/web/project/3455002/apis/api-120043036-run",
+                "security": []
+            }
+        },
+        "/cards/delete": {
+            "post": {
+                "summary": "删除留言",
+                "x-apifox-folder": "web",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "web"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "user": {
+                                        "type": "string",
+                                        "example": "dog1"
+                                    },
+                                    "create_time": {
+                                        "type": "string",
+                                        "example": "2023-10-26 22:22:59"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {},
+                                            "x-apifox-orders": [],
+                                            "x-apifox-ignore-properties": []
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-orders": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-ignore-properties": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apifox": "https://www.apifox.cn/web/project/3455002/apis/api-120046687-run",
+                "security": []
+            }
+        },
+        "/cards/all": {
+            "get": {
+                "summary": "获取所有留言",
+                "x-apifox-folder": "web",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "web"
+                ],
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "admin",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "username": {
+                                                        "type": "string"
+                                                    },
+                                                    "content": {
+                                                        "type": "string"
+                                                    },
+                                                    "img": {
+                                                        "type": "string",
+                                                        "nullable": true
+                                                    },
+                                                    "create_time": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "username",
+                                                    "content",
+                                                    "img",
+                                                    "create_time"
+                                                ],
+                                                "x-apifox-orders": [
+                                                    "username",
+                                                    "content",
+                                                    "img",
+                                                    "create_time"
+                                                ],
+                                                "x-apifox-ignore-properties": []
+                                            }
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-orders": [
+                                        "success",
+                                        "data",
+                                        "msg"
+                                    ],
+                                    "x-apifox-ignore-properties": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apifox": "https://www.apifox.cn/web/project/3455002/apis/api-120338883-run",
+                "security": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {},
+        "securitySchemes": {}
+    },
+    "servers": []
+}
