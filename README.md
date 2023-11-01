@@ -53,11 +53,20 @@ git clone 'https://github.com/monthwolf/vue-flask-web.git'
 cd frontend
 npm install
 ```
-- 安装python依赖
-```bash
-cd backend
-pip install -r requirements.txt
-```
+- 安装python依赖  
+python依赖的安装可以在本地直接安装也可以创建虚拟环境再安装，为避免与本地python环境冲突，推荐**创建虚拟环境安装依赖**   
+  - 虚拟环境安装(推荐)
+    ```bash
+    cd backend
+    python -m venv .venv
+    .venv/Scripts/activate
+    pip install -r requirements.txt
+    ```  
+  - 本地安装
+    ```bash
+    cd backend
+    pip install -r requirements.txt
+    ```
 
 ### 4.配置数据库
 - 创建数据库
