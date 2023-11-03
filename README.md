@@ -3,7 +3,7 @@
 >  Vue3+Typescript+elementPlus(组件库)+Router(路由)+Axios(网络请求)+Pinia(状态管理)
 
 ## 后端技术栈
-> Python+Flask+pymysql(数据库操作)+flagger(API文档构建)
+> Python+Flask+pymysql(数据库操作)
 
 ## 数据库
 > Mysql  
