@@ -12,14 +12,14 @@ const isreg = ref(false)
 <template>
     <div class="Login">
         <el-form :model="form" label-width="80px" size="default" :rules="rules(isreg)" ref="msgForm">
-            <el-form-item label="用户名" prop="username">
+            <el-form-item label="用户名" prop="username" style="display:block">
                 <el-input v-model="form.username" :validate-event="true" required />
             </el-form-item>
-            <el-form-item label="密码" prop="password">
+            <el-form-item label="密码" prop="password" style="display:block">
                 <el-input v-model="form.password" :validate-event="true" type="password" required />
             </el-form-item>
             <Transition>
-                <el-form-item v-show="isreg" label="确认密码" prop="confirmPassword">
+                <el-form-item v-show="isreg" label="确认密码" style="display:block" prop="confirmPassword">
                     <el-input v-model="form.confirmPassword" :validate-event="true" type="password" required />
                 </el-form-item>
             </Transition>
@@ -156,6 +156,7 @@ label {
     left: 0;
     padding: 0 5px !important;
     font-size: 16px;
+    display: inline-block !important;
     justify-content: flex-start !important;
     color: #000 !important;
     pointer-events: none;
@@ -169,9 +170,9 @@ label {
 }
 
 .Login el-form-item__content {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
+    width: 100% !important;
+    padding: 10px 0 !important;
+    font-size: 16px !important;
     /* color: #fff; */
     /* margin-bottom: 40px; */
     border: none !important;
