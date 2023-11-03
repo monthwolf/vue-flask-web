@@ -102,7 +102,7 @@ mysql> source ./backend/leFiles/user_data.sql;  #导入用户留言表
 ```
 - 连接数据库  
 进入**backend**文件夹，修改**mySQL_config.py**文件
-```bash
+```python
 # 数据库连接池
 POOL = PersistentDB(
     creator=pymysql,    
