@@ -286,7 +286,7 @@ p+p {
 .card-info {
     padding: 20px;
     position: absolute;
-    top: 20%;
+    // top: 20%;
     color: #fff;
     transform: translateY(200px);
     transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
