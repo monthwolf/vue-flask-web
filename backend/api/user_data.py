@@ -24,7 +24,7 @@ def get_cards():
             user=User_DataTB(param.get("user"))
             cards = user.getMyCards()
             data=[]
-            print(cards,file=open("log.txt","a"))
+            # print(cards,file=open("log.txt","a"))
             if cards == ():
                 content = json.dumps(formatres(False,{},"你当前未创建留言！"),ensure_ascii=False)
             else:

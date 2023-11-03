@@ -17,64 +17,6 @@ user = Blueprint('user',__name__)
 # @returns：{json}
 @user.route('/login', methods=['POST'])
 def login():
-    """
-      parameters: []
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                user:
-                  type: string
-                  description: 用户名
-                  example: dog4
-                pwd:
-                  type: string
-                  description: 密码
-                  example: test12345
-      responses:
-        '200':
-          description: 成功
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  success:
-                    type: boolean
-                  data:
-                    type: object
-                    properties:
-                      user:
-                        type: string
-                    required:
-                      - user
-                    x-apifox-orders:
-                      - user
-                    x-apifox-ignore-properties: []
-                  msg:
-                    type: string
-                required:
-                  - success
-                  - data
-                  - msg
-                x-apifox-orders:
-                  - success
-                  - data
-                  - msg
-                x-apifox-ignore-properties: []
-              examples:
-                '1':
-                  summary: 成功示例
-                  value:
-                    success: true
-                    data:
-                      user: dog4
-                    msg: 用户创建成功
-      x-run-in-apifox: https://www.apifox.cn/web/project/3455002/apis/api-118633935-run
-      security: []
-    """
     if request.method == 'POST':    #主要的操作都是api处理，像一些传参，格式化，以及最后的返回值
         # POST、GET:
         # request.form获得所有post参数放在一个类似dict类中,to_dict()是字典化  
@@ -122,10 +64,9 @@ def reg():
                     try:
                         insetintouser = UserTB(param.get("user"),param.get("pwd"))
                         insetintouser = insetintouser.insetinto()
-                        if insetintouser == ():
+                        if insetintouser != ():
                             content = json.dumps(formatres(True,{
-                            "user":param.get("user"),
-                        },"用户创建成功"),ensure_ascii=False)
+                            "user":param.get("user")},"用户创建成功"),ensure_ascii=False)
                         else:
                             content = json.dumps(formatres(False,{},"用户创建失败"),ensure_ascii=False)
                     except:
@@ -138,16 +79,3 @@ def reg():
         content = json.dumps(formatres(False,{},"101"))
     resp = Response_headers(content)
     return resp
-
-'''
-所以实际上在sql文件中的那两个函数，其实目的就是定义接受值  看上面   
-然后就是建立函数，写sql语句进行表格查询  插入  删除等操作
-上面的我懂了，但是我还想问一下怎么确定两个类之间的关系呀
-我们这个不需要做表关联，所以其实这两个类是互不影响的，至于确定是哪个用户发表的内容，
-实际上我是靠前端代码实现的，这里我应该要跟你说一下啊，就是这个代码我改了一个地方，这个就是最关键的
-所以登录之后会存储在前端，但是那个其实是暂时的，我之后还会改一下代码做本地持久化存储
-到时候我请求的时候就会重新从前端读取用户名，传到添加留言的api去，然后你写的数据库操作函数，也就是接收这个作为参数传进去的
-能听懂吧？
-能，那我们这个有管理员吗
-看情况，有余力就弄，这个也不是必须的
-'''
