@@ -704,7 +704,7 @@ button {
 
 .end {
     position: relative;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background: url(@/assets/end.png) no-repeat;
     background-size: 100%;
     background-position: center;
