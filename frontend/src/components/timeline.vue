@@ -1,5 +1,7 @@
 <template lang="pug">
-<div class="cont Timeline" >
+Backtop(@click="toTop")
+<div class="cont Timeline" ref="timeline">
+
 <div class="time" style="width:100%">
 #timeline-1.timeline-container
     .timeline-header
@@ -219,7 +221,11 @@
 </template>
 
 <script>
+import Backtop from './backtop.vue';
 export default {
+    components: {
+        Backtop
+    },
     mounted() {
         (function ($) {
             $.fn.timeline = function () {
@@ -236,7 +242,7 @@ export default {
                     "url(" + selectors.item.first().find(selectors.img).attr("src") + ")"
                 );
                 var itemLength = selectors.item.length;
-                $('.el-main').scroll(function () {
+                $('.Timeline').scroll(function () {
                     var max, min;
                     var pos = $(this).scrollTop();
                     selectors.item.each(function (i) {
@@ -277,6 +283,15 @@ export default {
         })(jQuery);
         // console.log($("#timeline-1"))
         $("#timeline-1").timeline();
+    },
+    methods: {
+        toTop() {
+            // console.log(this.$refs);
+            this.$refs.timeline.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        },
 
     },
 }
@@ -297,7 +312,19 @@ body {
     right: 0;
     position: absolute;
     width: 40%;
+    height: 100%;
+    overflow-y: scroll;
 
+}
+
+.cont {
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.cont::-webkit-scrollbar {
+    display: none;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -337,7 +364,7 @@ div.contentHead {
     user-select: none;
 }
 
-h2 {
+h2.timeline__content-title {
     box-sizing: border-box;
     color: #C00516 !important;
     display: inline-block;
@@ -369,8 +396,8 @@ h2 {
     }
 }
 
-$content-font: Cardo;
-$heading-font: '楷体', sans-serif;
+$content-font: Cardo !important;
+$heading-font: '楷体', sans-serif !important;
 $timeline-width: 700px;
 $timeline-container-width: 100%;
 

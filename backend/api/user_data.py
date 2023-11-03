@@ -48,7 +48,6 @@ def get_All():
             user=User_DataTB(param.get("user"))
             cards = user.getAllCards()
             data=[]
-            print(cards,file=open("log.txt","a"))
             if cards == ():
                 content = json.dumps(formatres(False,{},"无留言！"),ensure_ascii=False)
             else:

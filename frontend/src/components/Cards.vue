@@ -44,7 +44,7 @@ export default {
         },
         cardBgTransform() {
             const tX = this.mousePX * -40;
-            const tY = this.mousePY * -40;
+            const tY = this.mousePY * -2;
             return {
                 transform: `translateX(${tX}px) translateY(${tY}px)`
             }

@@ -5,7 +5,7 @@ import Timeline from '../components/timeline.vue';
 import AddCard from '../components/AddCard.vue';
 import axios from 'axios';
 import { ref } from 'vue';
-// 实现随机颜色
+
 </script>
 <script>
 export default {
@@ -36,6 +36,12 @@ export default {
     methods: {
         changeAddShow() {
             this.isAdd = !this.isAdd;
+        },
+        toTop() {
+            this.$refs.top.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
         }
     }
 }
@@ -43,19 +49,20 @@ export default {
 <template>
     <div class="CardView">
         <div class="Cards">
-            <h1 class="title">留言板</h1>
-            <div class="container">
-                <!-- 就是这个data-image用来绑定图片，我写了一个问号表达式来判断，如果img存在就用，没有就用默认的五星红旗 -->
-                <card v-for="card in Cards" :data-image='card.img ? card.img : require("@/assets/index2.jpg")'>
-                    <template #header>
-                        <h1>{{ card.create_time }}</h1>
-                    </template>
-                    <template #content>
-                        <p>{{ card.content }}</p>
-                    </template>
-                </card>
+            <div class="postCards" ref="top">
+                <button class="t" @click="toTop">留言板</button>
+                <div class="container">
+                    <!-- 就是这个data-image用来绑定图片，我写了一个问号表达式来判断，如果img存在就用，没有就用默认的五星红旗 -->
+                    <card v-for="card in Cards" :data-image='card.img ? card.img : require("@/assets/index2.jpg")'>
+                        <template #header>
+                            <h1>{{ card.create_time }}</h1>
+                        </template>
+                        <template #content>
+                            <p>{{ card.content }}</p>
+                        </template>
+                    </card>
+                </div>
             </div>
-
             <Timeline></Timeline>
         </div>
     </div>
@@ -79,6 +86,27 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 //     background-color: #BCAAA4;
 //     -webkit-font-smoothing: antialiased;
 // }
+.postCards {
+    // background-image: url("~@/assets/bg1.jpg");
+    position: sticky;
+    overflow-y: scroll;
+    top: 0;
+    background-attachment: fixed;
+    margin: 0 10px;
+    // padding-top: 1%;
+    height: 100%;
+    // padding-top: 5px;
+    border-top-width: 50px;
+    border-top-color: transparent;
+    border-radius: 3rem 3rem 0 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.postCards::-webkit-scrollbar {
+    display: none;
+}
 
 .mask {
     width: 100%;
@@ -93,20 +121,69 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
 .Cards {
     width: 60%;
+    height: 100%;
 }
 
 .CardView {
     position: relative;
+    height: 100%;
 }
 
-.title {
-    margin-top: 50px;
-    font-family: "Raleway";
-    font-size: 24px;
-    font-weight: 700;
-    color: #5D4037;
+
+.t {
+    display: inline-block;
+    position: sticky;
+    z-index: 1;
+    overflow: hidden;
     text-align: center;
+    text-decoration: none;
+    font-family: "Raleway";
+    font-weight: 600;
+    font-size: 2em;
+    top: 0;
+    background-color: #fff;
+    padding: 0.75em 1em;
+    color: blue;
+    border: 0.11em solid blue;
+    // border-radius: 2em 2em 0 0;
+    transition: 3s;
+    width: 100%;
 }
+
+.t:before,
+.t:after {
+    content: "";
+    position: absolute;
+    top: -1.5em;
+    z-index: -1;
+    width: 200%;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 40%;
+    background-color: rgba(0, 0, 255, 0.25);
+    transition: 3s;
+}
+
+.t:before {
+    left: -80%;
+    transform: translate3d(0, 5em, 0) rotate(-340deg);
+}
+
+.t:after {
+    right: -80%;
+    transform: translate3d(0, 5em, 0) rotate(390deg);
+}
+
+.t:hover {
+    color: white;
+}
+
+.t:hover:before,
+.t:hover:after {
+    transform: none;
+    background-color: rgba(0, 0, 255, 0.75);
+}
+
 
 p {
     line-height: 1.5em;
@@ -176,8 +253,8 @@ p+p {
 .card {
     position: relative;
     flex: 0 0 240px;
-    width: 300px;
-    height: 400px;
+    width: 270px;
+    height: 360px;
     background-color: #333;
     overflow: hidden;
     border-radius: 10px;

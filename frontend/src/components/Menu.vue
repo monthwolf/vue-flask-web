@@ -19,7 +19,7 @@
     </div>
   </el-menu>
   <el-menu mode="horizontal" :ellipsis="false">
-    <el-menu-item index="apidoc" key="4" @click="	window.location.href = 'http://127.0.0.1:5000/static/index.html'">
+    <el-menu-item index="apidoc" key="4" @click="goAPI">
       <b>
         <a class="api" href="http://127.0.0.1:5000/static/index.html">API文档</a>
       </b>
@@ -248,6 +248,9 @@ export default {
           duratione: 1000,
         })
       }
+    },
+    goAPI() {
+      window.location.href = "http://127.0.0.1:5000/static/index.html";
     },
     log_s(res) {
       if (res.success) {
