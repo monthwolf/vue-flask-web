@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x672c;&#x9879;&#x76ee;&#x4e3a;&#x524d;&#x540e;&#x7aef;&#x5206;&#x79bb;&#x7684;&#x7f51;&#x9875;&#x9879;&#x76ee;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+/*自定义样式，实时生效*/
+
+
+p {
+	margin: 0 0 20px;
+	padding: 0;
+	line-height: 1.8em;
+	color: #3a3a3a;
+}
+
+/* 一级标题 */
+h1 {
+  font-size: 2.1em;
+	line-height: 1.1em;
+	padding-top: 16px;
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #c99833;
+}
+/* 一级标题内容 */
+h1 .content {
+  color: #515151;
+  font-weight: 700;
+}
+
+h2, h3, h4, h5, h6 {
+ line-height: 1.5em;
+ margin-top: 2.2em;
+ margin-bottom: 4px;
+}
+
+/* 一级标题修饰 请参考有实例的主题 */
+h1:after {}
+
+/* 二级标题 */
+h2 {
+ box-sizing: border-box;
+color: #000000;
+font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+font-size: 22px;
+font-variant: tabular-nums;
+font-weight: 700;
+line-height: 1.5em;
+margin-bottom: 35px;
+margin-top: 2.2em;
+text-align: justify;
+word-break: break-word;
+background-color: initial;
+background-image: linear-gradient(#FFFFFF 60%,#FFB11B 40%);
+box-sizing: border-box;
+color: #515151;
+display: inline-block;
+font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+font-size: 22px;
+font-variant: tabular-nums;
+font-variant-alternates: normal;
+font-variant-numeric: tabular-nums;
+font-variant-position: normal;
+font-weight: 700;
+height: 50%;
+line-height: 33px;
+margin-right: 3px;
+padding: 2px 13px;
+text-align: justify;
+word-break: break-word;
+}
+
+/* 二级标题内容 */
+
+h2 .content {
+  
+}
+
+/* 二级标题修饰 请参考有实例的主题 */
+h2:after {}
+
+/* 三级标题 */
+h3 {
+  line-height: 1.4;
+  padding-top: 10px;
+  margin: 10px 0 5px;
+}
+
+/* 三级标题内容 */
+h3 .content {
+  color: #515151;
+  font-weight: 700;
+ font-size: 1.0em;
+  padding-left: 20px;
+  border-left: 3px solid #f9bf45;
+}
+
+/* 三级标题修饰 请参考有实例的主题 */
+h3:after {}
+
+/* 引用
+* 左边缘颜色 border-left-color: black;
+* 背景色 background: gray;
+*/
+blockquote {
+  border-left-color: #ffb11b;
+ background: #fff5e3;
+ background-color: #FFF5E3;
+border-left: 3px solid #FFB11B;
+box-sizing: border-box;
+color: #6A737D;
+display: block;
+font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+font-size: .9em;
+font-variant: tabular-nums;
+line-height: 23.04px;
+margin: 20px 0;
+overflow: auto;
+padding: 10px 10px 10px 20px;
+text-align: justify;
+word-break: break-word;
+}
+
+/* 引用文字 */
+blockquote p {
+ box-sizing: border-box;
+color: #595959;
+font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+font-size: 16px;
+font-variant: tabular-nums;
+line-height: 26px;
+margin: 0;
+padding: 0;
+text-align: justify;
+word-break: break-word;
+}
+
+/* 链接 */
+a {
+  border: none;
+  text-decoration: none;
+  color: #dda52d;
+}
+
+a:hover {
+  color: #f9bf45;
+  text-decoration: underline;
+}
+
+/* 无序列表整体样式
+ * list-style-type: square|circle|disc;
+ */
+ul {
+}
+
+/* 有序列表整体样式
+ * list-style-type: upper-roman|lower-greek|lower-alpha;
+ */
+ol {
+}
+
+/* 列表内容，不要设置li
+ */
+li section {
+}
+
+/* 加粗 */
+strong {}
+
+/* 斜体 */
+em {}
+
+/* 加粗斜体 */
+em strong {}
+
+/* 删除线 */
+del {
+  color: #d19826;
+}
+
+/* 分隔线
+* 粗细、样式和颜色
+* border-top: 1px solid #3e3e3e;
+*/
+hr {
+  border-top: 1px solid #f9bf45;
+  margin: 20px 0px;
+}
+
+/* 图片
+* 宽度 width: 80%;
+* 居中 margin: 0 auto;
+* 居左 margin: 0 0;
+*/
+img {
+  width: 100%;
+ border-radius: 5px;
+ display: block;
+ margin-bottom: 15px;
+ height: auto;
+}
+
+/* 图片描述文字 */
+figcaption {
+  color: #dda52d;
+  font-size: 14px;
+}
+
+/* 行内代码 */
+p code, li code {
+  color: #9b6e23;
+  background-color: #fff5e3;
+  padding: 3px;
+  margin: 3px;
+}
+
+/* 非微信代码块
+ * 代码块不换行 display: -webkit-box !important;
+ * 代码块换行 display: block;
+ */
+pre code {
+    background-color: #FFF5E3;
+border-radius: 4px;
+box-sizing: border-box;
+color: #9B6E23;
+display: -webkit-box;
+font-family: "Operator Mono", Consolas, Monaco, Menlo, monospace;
+font-size: 14px;
+font-variant: tabular-nums;
+font-weight: 500;
+line-height: 26px;
+margin: 3px;
+overflow-wrap: break-word;
+overflow-x: auto;
+padding: 3px;
+text-align: left;
+white-space: pre;
+word-break: break-all;
+
+}
+
+/*
+ * 表格内的单元格
+ * 字体大小 font-size: 16px;
+ * 边框 border: 1px solid #ccc;
+ * 内边距 padding: 5px 10px;
+ */
+table tr th,
+table tr td {
+  text-align: center;
+}
+
+/* 脚注文字 */
+.footnote-word {
+  color: #ffb11b;
+  padding: 3px;
+}
+
+/* 脚注上标 */
+.footnote-ref {
+  color: #dda52d;
+  margin: 2px;
+  padding: 3px;
+}
+
+/* "参考资料"四个字 
+ * 内容 content: "参考资料";
+ */
+.footnotes-sep:before {
+  margin: 30px 0px 15px 0px;
+  font-weight: 800;
+}
+
+
+/* 参考资料编号 */
+.footnote-num {
+}
+
+/* 参考资料文字 */
+.footnote-item p { 
+}
+
+/* 参考资料解释 */
+.footnote-item p em {
+}
+
+/* 行间公式
+ * 最大宽度 max-width: 300% !important;
+ */
+.block-equation svg {
+}
+
+/* 行内公式
+ */
+.inline-equation svg {  
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="本项目为前后端分离的网页项目">本项目为前后端分离的网页项目</h1>
+<h2 id="前端技术栈">前端技术栈</h2>
+<blockquote>
+<p>Vue3+Typescript+elementPlus(组件库)+Router(路由)+Axios(网络请求)+Pinia(状态管理)</p>
+</blockquote>
+<h2 id="后端技术栈">后端技术栈</h2>
+<blockquote>
+<p>Python+Flask+pymysql(数据库操作)+flagger(API文档构建)</p>
+</blockquote>
+<h2 id="数据库">数据库</h2>
+<blockquote>
+<p>Mysql</p>
+</blockquote>
+<h2 id="项目介绍">项目介绍</h2>
+<p>这是一个党建主题的网站，目前建设了如下内容及功能：<br>
+--------------------内容--------------------</p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 首页</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 留言墙</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 关于我们</li>
+</ul>
+<p>--------------------功能--------------------</p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> 多页路由菜单栏</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> 留言</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> 党史时间轴</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> 用户注册登录</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> 注册登录时对输入进行查验</p>
+</li>
+<li>
+<p>侧边功能按钮</p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 回到顶部</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 写留言</li>
+</ul>
+</li>
+<li>
+<p>留言墙功能</p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 用户创建留言</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 用户查看自己的留言</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 用户留言删除</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 用户留言批量删除</li>
+</ul>
+</li>
+</ul>
+<h2 id="项目结构">项目结构</h2>
+<ul>
+<li>包含<strong>前端后端</strong>文件夹<pre><code class="language-bash">backend                          <span class="hljs-comment">#  后端文件夹</span>
+├── Utils                        <span class="hljs-comment">#  公共类</span>
+│   └── utils.py                 <span class="hljs-comment">#  公共方法</span>
+├── api                          <span class="hljs-comment">#  API接口类</span>
+│   ├── user.py                  <span class="hljs-comment">#  用户相关API</span>
+│   └── user_data.py             <span class="hljs-comment">#  用户留言相关API</span>
+├── mySQL_config.py              <span class="hljs-comment">#  数据库配置文件</span>
+├── requirements.txt             <span class="hljs-comment">#  后端依赖</span>
+├── run.py                       <span class="hljs-comment">#  启动文件</span>
+├── sql                          <span class="hljs-comment">#  SQL类</span>
+│   ├── user.py                  <span class="hljs-comment">#  用户SQL方法</span>
+│   └── user_data.py             <span class="hljs-comment">#  用户留言SQL方法</span>
+├── sqlTableFiles                <span class="hljs-comment">#  SQL表文件</span>
+│   ├── user.sql                 <span class="hljs-comment">#  用户表</span>
+│   └── user_data.sql            <span class="hljs-comment">#  用户留言表</span>
+└── static                       <span class="hljs-comment">#  静态文件</span>
+frontend                         <span class="hljs-comment">#  前端文件夹</span>
+├── package.json                 <span class="hljs-comment">#  前端依赖</span>
+├── public                       <span class="hljs-comment">#  公共资源</span>
+├── src                            
+│   ├── App.vue                  <span class="hljs-comment">#  根组件</span>
+│   ├── assets                   <span class="hljs-comment">#  资源文件夹</span>
+│   ├── components               <span class="hljs-comment">#  组件文件夹</span>
+│   ├── main.ts                  <span class="hljs-comment">#  入口文件</span>
+│   ├── router                   <span class="hljs-comment">#  路由文件夹</span>
+│   ├── stores                   <span class="hljs-comment">#  状态管理文件夹</span>
+│   └── views                    <span class="hljs-comment">#  视图文件夹</span>
+├── tsconfig.json                <span class="hljs-comment">#  ts配置文件</span>
+└── vue.config.js                <span class="hljs-comment">#  vue配置文件</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="项目运行">项目运行</h2>
+<h3 id="1-安装vuepythonmysql配置好环境">1. 安装<strong>vue，python，mysql</strong>,配置好环境</h3>
+<h3 id="2-从guihub克隆项目文件">2. 从guihub克隆项目文件</h3>
+<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> <span class="hljs-string">&#x27;https://github.com/monthwolf/vue-flask-web.git&#x27;</span> 
+</code></pre>
+<h3 id="3-安装依赖">3. 安装依赖</h3>
+<p>以下命令在在<strong>根目录</strong>中运行</p>
+<ul>
+<li>安装vue3框架依赖<pre><code class="language-bash"><span class="hljs-built_in">cd</span> frontend
+npm install
+</code></pre>
+</li>
+<li>安装python依赖<br>
+python依赖的安装可以在本地直接安装也可以创建虚拟环境再安装，为避免与本地python环境冲突，推荐<strong>创建虚拟环境安装依赖</strong>
+<ul>
+<li>虚拟环境安装(推荐)<pre><code class="language-bash"><span class="hljs-built_in">cd</span> backend
+python -m venv .venv
+.venv/Scripts/activate
+pip install -r requirements.txt
+</code></pre>
+</li>
+<li>本地安装<pre><code class="language-bash"><span class="hljs-built_in">cd</span> backend
+pip install -r requirements.txt
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4配置数据库">4.配置数据库</h3>
+<ul>
+<li>创建数据库<pre><code class="language-bash">mysql -u root -p xxxx                           <span class="hljs-comment">#登录自己本地的mysql数据库</span>
+mysql&gt; create database vue_flask_web;           <span class="hljs-comment">#创建数据库</span>
+mysql&gt; use vue_flask_web;                       <span class="hljs-comment">#切换到数据库</span>
+mysql&gt; <span class="hljs-built_in">source</span> ./backend/leFiles/user.sql;       <span class="hljs-comment">#导入用户表</span>
+mysql&gt; <span class="hljs-built_in">source</span> ./backend/leFiles/user_data.sql;  <span class="hljs-comment">#导入用户留言表</span>
+</code></pre>
+</li>
+<li>连接数据库<br>
+进入<strong>backend</strong>文件夹，修改<strong>mySQL_config.py</strong>文件<pre><code class="language-python"><span class="hljs-comment"># 数据库连接池</span>
+POOL = PersistentDB(
+    creator=pymysql,    
+    maxusage=<span class="hljs-literal">None</span>,      <span class="hljs-comment"># 一个链接最多被重复使用的次数，None表示无限制</span>
+    setsession=[],      
+    ping=<span class="hljs-number">0</span>,             
+    closeable=<span class="hljs-literal">False</span>,    
+    threadlocal=<span class="hljs-literal">None</span>,   
+    host=<span class="hljs-string">&#x27;127.0.0.1&#x27;</span>,   <span class="hljs-comment"># 数据库地址</span>
+    port=<span class="hljs-number">3306</span>,          <span class="hljs-comment"># 数据库端口号</span>
+    user=<span class="hljs-string">&#x27;root&#x27;</span>,        <span class="hljs-comment"># 用户名</span>
+    password=<span class="hljs-string">&#x27;123456&#x27;</span>,  <span class="hljs-comment"># 密码</span>
+    database=<span class="hljs-string">&#x27;test&#x27;</span>,    <span class="hljs-comment"># 数据库库名</span>
+    charset=<span class="hljs-string">&#x27;utf8&#x27;</span>      <span class="hljs-comment"># 编码</span>
+)
+
+
+</code></pre>
+</li>
+</ul>
+<h3 id="运行前后端项目">运行前后端项目</h3>
+<ul>
+<li><strong>注意</strong>:请保持数据库运行！<pre><code class="language-bash"><span class="hljs-built_in">cd</span> backend
+python run.py
+<span class="hljs-built_in">cd</span> ../
+<span class="hljs-built_in">cd</span> frontend
+npm run serve
+</code></pre>
+</li>
+</ul>
+
+        
+        
+    </body>
+    </html>
