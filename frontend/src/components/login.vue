@@ -5,7 +5,7 @@ import axios from 'axios';
 import qs from 'qs';
 import { reactive, ref } from 'vue';
 
-const isreg = ref(false)
+const isreg = ref(true)
 
 </script>
 
